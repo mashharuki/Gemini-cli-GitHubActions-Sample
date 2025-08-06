@@ -9,6 +9,18 @@ Gemini CLI + GitHub Actionsのサンプル実装
 - CLIとGitHub Actionsの連携
   - `gemini /setup-github`
 
+## 代表的なユースケース
+
+- 自動 Issue Triage
+- PR コードレビュー
+- On-demand タスク委譲
+  - GitHub Copilotみたいに `@gemini-cli` つけるとテストコードとか書いてくれる
+
+## 無料枠
+
+1,000 リクエスト/日・60 req/分 の無料枠が CLI／Actions と共有されます。
+
+
 ## 参考文献
 - [Zenn - 【最新】GitHub ActionsでGemini CLIを活用してみよう](https://zenn.dev/makumaaku/articles/15f56ac617a3af)
 - [GitHub - google-gemini/gemini-cli-action](https://github.com/google-gemini/gemini-cli-action)
