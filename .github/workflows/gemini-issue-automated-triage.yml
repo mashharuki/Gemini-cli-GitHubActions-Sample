@@ -64,6 +64,7 @@ jobs:
       - name: Run Gemini Issue Triage
         uses: google-gemini/gemini-cli-action@main
         env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token || secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token || secrets.GITHUB_TOKEN }}
           ISSUE_TITLE: ${{ github.event.issue.title }}   # Issueのタイトル
           ISSUE_BODY: ${{ github.event.issue.body }}     # Issueの本文

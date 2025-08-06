@@ -73,10 +73,11 @@ jobs:
           fetch-depth: 0                               # 全ての履歴を取得
 
       # PR詳細を取得するステップ (pull_request, workflow_dispatchイベント用)
-      - name: Get PR details (pull_request & workflow_dispatch)
+            - name: Get PR details (pull_request & workflow_dispatch)
         id: get_pr
-        if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'pull_request' or github.event_name == 'workflow_dispatch'
         env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token || secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
         run: |
           # イベントタイプに応じてPR番号を取得
@@ -100,6 +101,7 @@ jobs:
         id: get_pr_comment
         if: github.event_name == 'issue_comment'
         env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token || secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
           COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
@@ -121,6 +123,7 @@ jobs:
       - name: Run Gemini PR Review
         uses: google-gemini/gemini-cli-action@main
         env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token || secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
           PR_NUMBER: ${{ steps.get_pr.outputs.pr_number || steps.get_pr_comment.outputs.pr_number }}
           PR_DATA: ${{ steps.get_pr.outputs.pr_data || steps.get_pr_comment.outputs.pr_data }}

@@ -43,6 +43,7 @@ jobs:
       - name: Find untriaged issues
         id: find_issues
         env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token || secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token || secrets.GITHUB_TOKEN }}
         run: |
           echo "🔍 Finding issues without labels..."
@@ -69,6 +70,7 @@ jobs:
         if: steps.find_issues.outputs.issues_to_triage != '[]'
         uses: google-gemini/gemini-cli-action@main
         env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token || secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token || secrets.GITHUB_TOKEN }}
           ISSUES_TO_TRIAGE: ${{ steps.find_issues.outputs.issues_to_triage }} # トリアージ対象のIssue
           REPOSITORY: ${{ github.repository }}
