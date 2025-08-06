@@ -8,6 +8,7 @@ Gemini CLI + GitHub Actionsのサンプル実装
   - `GEMINI_API_KEY`
 - CLIとGitHub Actionsの連携
   - `gemini /setup-github`
+  
 
 ## 代表的なユースケース
 
