@@ -29,3 +29,4 @@ Gemini CLI + GitHub Actionsのサンプル実装
 - [GitHub - google-github-actions/run-gemini-cli](https://github.com/google-github-actions/run-gemini-cli)
 - [Meet your new AI coding teammate: Gemini CLI GitHub Actions](https://blog.google/technology/developers/introducing-gemini-cli-github-actions/)
 - [GitHub Actions run-gemini-cli Marketplace](https://github.com/marketplace/actions/run-gemini-cli)
+- [Google Cloud Next Tokyo '25で発表された、Gemini CLI GitHub Actionsを試してみた](https://zenn.dev/iret/articles/run-gemini-cli-test)
