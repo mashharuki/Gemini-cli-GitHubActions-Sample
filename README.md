@@ -26,3 +26,6 @@ Gemini CLI + GitHub Actionsのサンプル実装
 - [Zenn - 【最新】GitHub ActionsでGemini CLIを活用してみよう](https://zenn.dev/makumaaku/articles/15f56ac617a3af)
 - [GitHub - google-gemini/gemini-cli-action](https://github.com/google-gemini/gemini-cli-action)
 - [GitHub - google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
+- [GitHub - google-github-actions/run-gemini-cli](https://github.com/google-github-actions/run-gemini-cli)
+- [Meet your new AI coding teammate: Gemini CLI GitHub Actions](https://blog.google/technology/developers/introducing-gemini-cli-github-actions/)
+- [GitHub Actions run-gemini-cli Marketplace](https://github.com/marketplace/actions/run-gemini-cli)
